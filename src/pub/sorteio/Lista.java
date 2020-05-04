@@ -55,7 +55,6 @@ public class Lista {
 				quantidade--;
 			} else if(pos == quantidade) {
 				removerFim();
-				quantidade--;
 			} else {
 				No noAux = inicio;
 				int cont = 0;
