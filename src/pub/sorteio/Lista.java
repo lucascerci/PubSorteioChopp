@@ -8,16 +8,16 @@ public class Lista {
 	private int quantidade;
 	
 	public void inserirFim(No novoNo) {
-            if(inicio==null) {
-		inicio = novoNo;
-		quantidade++;
-            } else {
-		fim.setProximo(novoNo);
-		novoNo.setAnterior(fim);
-		fim = novoNo;
-		quantidade++;
-            }
-            fim = novoNo;
+        if(inicio==null) {
+        	inicio = novoNo;
+        	quantidade++;
+        } else {
+        	fim.setProximo(novoNo);
+        	novoNo.setAnterior(fim);
+        	fim = novoNo;
+        	quantidade++;
+        }
+        fim = novoNo;
 	}
     
 	public void removerCli(int num){
@@ -42,21 +42,20 @@ public class Lista {
                     JOptionPane.showMessageDialog(null, "Não há o número " + num +" na lista");
                 }
             }
-        }
+    }
         
     public void numero(int sorteado){
             No noSor = inicio;
-            if(inicio == null) {
-                JOptionPane.showMessageDialog(null, "Lista Vazia");
-            } else {
-		if(sorteado == 0) {
+        if(inicio == null) {
+            JOptionPane.showMessageDialog(null, "Lista Vazia");
+        } else {
+        	if(sorteado == 0) {
                     JOptionPane.showMessageDialog(null,"Número sorteado: "+ noSor.numero);
-		} else if(sorteado == quantidade) {
+        	} else if(sorteado == quantidade) {
                     noSor = fim;
                     JOptionPane.showMessageDialog(null,"Número sorteado: "+ noSor.numero);
-		} else {
+        	} else {
                     int cont = 0;
-				
                     while(noSor.getProximo() != null && cont < sorteado) {
                         noSor = noSor.getProximo();
                         cont++;
@@ -64,7 +63,7 @@ public class Lista {
                     JOptionPane.showMessageDialog(null,"Número sorteado: "+ noSor.numero);
                 }
             }
-        }
+    }
 	
 	public void removerFim() {
             if(inicio == null) {
@@ -85,51 +84,50 @@ public class Lista {
 	}
 	
 	public void removerInicio() {
-            if(inicio == null) {
-                JOptionPane.showMessageDialog(null, "Lista Vazia");
-            } else {
-                No noAux = inicio;
-		inicio = inicio.getProximo();
-		noAux.setProximo(null);
-            }
+        if(inicio == null) {
+        	JOptionPane.showMessageDialog(null, "Lista Vazia");
+        } else {
+        	No noAux = inicio;
+        	inicio = inicio.getProximo();
+        	noAux.setProximo(null);
+        }
 	}
 	
 	public void removerPosEsp(int pos) {
-            if(inicio == null) {
+        if(inicio == null) {
                 JOptionPane.showMessageDialog(null, "Lista Vazia");
-            } else {
-                if(pos == 0) {
-                    removerInicio();
-                    quantidade--;
-                } else if(pos == quantidade) {
+        } else {
+        	if(pos == 0) {
+        		removerInicio();
+        		quantidade--;
+            } else if(pos == quantidade) {
                     removerFim();
-		} else {
-                    No noAux = inicio;
-                    int cont = 0;		
-                    while(noAux.getProximo() != null && cont < pos) {
-			noAux = noAux.getProximo();
-			cont++;
-                    }
-                    No noAnt = noAux.getAnterior();
-                    if(noAnt != null) {
-                        noAnt.setProximo(noAux.getProximo());
-                    }
-                    quantidade--;
-		}
+            } else {
+            	No noAux = inicio;
+            	int cont = 0;		
+            	while(noAux.getProximo() != null && cont < pos) {
+            		noAux = noAux.getProximo();
+            		cont++;
+                }
+                No noAnt = noAux.getAnterior();
+                if(noAnt != null) {
+                	noAnt.setProximo(noAux.getProximo());
+                }
+                quantidade--;
             }
+        }
 	}
 	
 	public void listar() {
-            if(inicio == null) {
-                JOptionPane.showMessageDialog(null, "Lista Vazia");
-            } else {
-		No noAux = inicio;
-			
-                    while(noAux != null) {
-			System.out.println(noAux.getNumero());
-			noAux = noAux.getProximo();
-                    } 
-            }
+       if(inicio == null) {
+    	   JOptionPane.showMessageDialog(null, "Lista Vazia");
+       } else {
+    	   No noAux = inicio;
+            while(noAux != null) {
+            	System.out.println(noAux.getNumero());
+            	noAux = noAux.getProximo();
+            } 
+       }
 	}
 
 	public int getQuantidade() {

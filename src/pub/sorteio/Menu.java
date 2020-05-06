@@ -45,10 +45,10 @@ public class Menu {
                                         System.out.println("-------------------------------------");
                                 } 
 			} else if(menu == 4){
-                                lista.listar();
-                        }else {
-                                JOptionPane.showMessageDialog(null,"Opção Inválida");
-                        }
+				lista.listar();
+            } else {
+            	JOptionPane.showMessageDialog(null,"Opção Inválida");
+            }
 		}
 	}
 
