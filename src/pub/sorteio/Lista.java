@@ -45,7 +45,7 @@ public class Lista {
     }
         
     public void numero(int sorteado){
-            No noSor = inicio;
+        No noSor = inicio;
         if(inicio == null) {
             JOptionPane.showMessageDialog(null, "Lista Vazia");
         } else {
@@ -61,26 +61,26 @@ public class Lista {
                         cont++;
                     }
                     JOptionPane.showMessageDialog(null,"Número sorteado: "+ noSor.numero);
-                }
             }
+         }
     }
 	
 	public void removerFim() {
-            if(inicio == null) {
-                JOptionPane.showMessageDialog(null, "Lista Vazia");
-            } else {
-		No noAnt = fim.getAnterior();
-		if(noAnt == null) {
-                    inicio = null;
-                    fim = null;
-                    quantidade--;
-		} else {
-                    noAnt.setProximo(null);
-                    fim.setAnterior(null);
-                    fim = noAnt;
-                    quantidade--;
-		}
-            }
+        if(inicio == null) {
+        	JOptionPane.showMessageDialog(null, "Lista Vazia");
+        } else {
+			No noAnt = fim.getAnterior();
+			if(noAnt == null) {
+				inicio = null;
+				fim = null;
+				quantidade--;
+			} else {
+				noAnt.setProximo(null);
+	            fim.setAnterior(null);
+	            fim = noAnt;
+	            quantidade--;
+			}
+        }
 	}
 	
 	public void removerInicio() {
